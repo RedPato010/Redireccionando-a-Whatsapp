@@ -1,58 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redireccionando a WhatsApp...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casino Mega Faraón</title>
   <style>
     body {
-      background-color: #e5f6ed;
+      background-color: #000;
+      color: #fff;
       font-family: Arial, sans-serif;
-      color: #075e54;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      flex-direction: column;
       text-align: center;
-    }
-    .loader {
-      border: 6px solid #cfd8dc;
-      border-top: 6px solid #25D366;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin-bottom: 20px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      padding: 40px 20px;
     }
 
     h1 {
-      font-size: 22px;
-      margin: 0;
+      font-size: 2.5em;
+      color: #ffd700;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 14px;
-      color: #555;
+    .subtitulo {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+
+    .contador {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #0f0;
+    }
+
+    .boton-wpp {
+      background-color: #25D366;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .boton-wpp:hover {
+      background-color: #1ebc5c;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <div class="loader"></div>
-  <h1>Redireccionando a WhatsApp...</h1>
-  <p>Por favor esperá un momento</p>
+
+  <h1>🎰 ¡Bienvenido a Mega Faraón!</h1>
+  <p class="subtitulo">📲 Obtené tu usuario y recibí <strong>un 30% de bono</strong> para empezar a jugar</p>
+
+  <p class="contador">👥 Usuarios conectados ahora: <span id="usuarios">...</span></p>
+
+  <a class="boton-wpp" href="https://wa.me/5493564225100?text=%F0%9F%8E%B0+%C2%A1Hola%21+Quiero+reclamar+el+bono+del+30%25+de+bienvenida.+%C2%BFMe+pod%C3%A9s+crear+un+usuario%3F+%F0%9F%92%B0%F0%9F%94%A5" target="_blank">
+    💬 Pedir Bono por WhatsApp
+  </a>
+
+  <div class="footer">
+    Verificación requerida antes de ingresar a la plataforma.
+  </div>
 
   <script>
-    setTimeout(() => {
-      const mensaje = encodeURIComponent("Quiero jugar con mi bon0 del 30%");
-      window.location.href = `https://wa.me/5493564225100?text=${mensaje}`;
-    }, 2000); // Espera 2 segundos antes de redirigir
+    // Simula contador dinámico de usuarios conectados
+    function actualizarUsuarios() {
+      const base = 103 + Math.floor(Math.random() * 20); // entre 103 y 122
+      document.getElementById('usuarios').textContent = base;
+    }
+
+    actualizarUsuarios();
+    setInterval(actualizarUsuarios, 5000); // cambia cada 5 segundos
   </script>
+
 </body>
 </html>
